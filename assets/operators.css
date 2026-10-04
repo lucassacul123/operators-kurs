@@ -197,6 +197,47 @@ img{display:block;max-width:100%;height:auto}
 .validity{margin-top:var(--op-space-3)}
 .roi{margin-top:var(--op-space-6);font-size:var(--op-size-body-l);max-width:44ch}
 
+/* Regnestykket: glidere og resultat. Ingen ny farge: ink, grå og fokusringen. */
+.calc{margin-top:var(--op-space-9)}
+.calc-head .h2{margin-top:var(--op-space-4)}
+.calc-head .body-l{margin-top:var(--op-space-5)}
+.calc-body{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--op-space-5);
+  margin-top:var(--op-space-7);align-items:start}
+.calc-in{grid-column:span 6}
+.calc-out{grid-column:8 / span 5;margin:0}
+.slider+.slider{margin-top:var(--op-space-7)}
+.slider label{display:block}
+.slider-val{margin-top:var(--op-space-2);font-family:var(--op-font-mono);font-weight:var(--op-weight-medium);
+  font-size:var(--op-size-display-m);line-height:1.3;font-variant-numeric:tabular-nums}
+.slider-sub{font-size:var(--op-size-caption);color:var(--op-text-muted);margin-left:var(--op-space-2)}
+.slider input[type=range]{--f:0;-webkit-appearance:none;appearance:none;display:block;width:100%;height:44px;
+  margin:var(--op-space-2) 0 0;padding:0;background:transparent;cursor:pointer}
+.slider input[type=range]:focus{outline:none}
+.slider input[type=range]::-webkit-slider-runnable-track{height:2px;border:0;
+  background-color:var(--op-border);background-image:linear-gradient(var(--op-text),var(--op-text));
+  background-repeat:no-repeat;background-size:calc(9px + (100% - 18px) * var(--f)) 100%}
+.slider input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:18px;height:18px;
+  margin-top:-8px;border:0;border-radius:0;background:var(--op-text)}
+.slider input[type=range]::-moz-range-track{height:2px;border:0;background:var(--op-border)}
+.slider input[type=range]::-moz-range-progress{height:2px;background:var(--op-text)}
+.slider input[type=range]::-moz-range-thumb{width:18px;height:18px;border:0;border-radius:0;background:var(--op-text)}
+.slider input[type=range]:focus-visible::-webkit-slider-thumb{outline:2px solid var(--op-focus);outline-offset:2px}
+.slider input[type=range]:focus-visible::-moz-range-thumb{outline:2px solid var(--op-focus);outline-offset:2px}
+.ticks{position:relative;height:1.5em;font-family:var(--op-font-mono);font-weight:var(--op-weight-medium);
+  font-size:var(--op-size-label);color:var(--op-text-muted);line-height:1.5}
+.ticks span{position:absolute;top:0;left:0;white-space:nowrap}
+.ticks span[style]{left:calc(9px + (100% - 18px) * var(--f))}
+.ticks .end{left:auto;right:0}
+.calc-out div{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:var(--op-space-4);
+  padding:var(--op-space-5) 0;border-top:1px solid var(--op-text)}
+.calc-out div:last-child{border-bottom:1px solid var(--op-text)}
+.calc-out dt{font-weight:var(--op-weight-bold);font-size:var(--op-size-body-l);line-height:1.4}
+.calc-out dd{margin:0;font-family:var(--op-font-mono);font-weight:var(--op-weight-medium);
+  font-size:var(--op-size-display-m);white-space:nowrap;font-variant-numeric:tabular-nums}
+.calc-sub{display:block;margin-top:var(--op-space-1);font-weight:var(--op-weight-regular);
+  font-size:var(--op-size-caption);color:var(--op-text-muted)}
+.calc-note{margin-top:var(--op-space-5);font-size:var(--op-size-caption)}
+
 /* FAQ */
 .faq-group+.faq-group{margin-top:var(--op-space-7)}
 .faq-group-label{margin-bottom:var(--op-space-3)}
@@ -243,6 +284,9 @@ img{display:block;max-width:100%;height:auto}
   .faq summary{grid-template-columns:2.25rem 1fr 20px}
   .faq .a{padding-left:0}
   .faq .span-4{margin-bottom:var(--op-space-5)}
+  .calc-body{grid-template-columns:1fr}
+  .calc-in,.calc-out{grid-column:auto}
+  .calc-out{margin-top:var(--op-space-7)}
 }
 /* Bunntekst med lenker */
 .site-foot .foot-links{display:flex;gap:var(--op-space-5);flex-wrap:wrap;align-items:center}

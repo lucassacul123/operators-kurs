@@ -307,6 +307,37 @@
       </ul>
       <div style="margin-top:var(--op-space-6)"><a class="btn btn-ink" href="https://tally.so/r/NpepgW" data-tally-open="NpepgW" data-tally-layout="modal" data-tally-width="640" data-tally-auto-close="0">Søk om plass</a></div>
     </div>
+
+    <!-- Regnestykket: alt regnes i nettleseren, ingenting lagres eller sendes -->
+    <div class="span-12 calc" id="regnestykket">
+      <div class="calc-head">
+        <p class="op-label">Regnestykket</p>
+        <h3 class="h2">Hva er en forbedring verdt for dere?</h3>
+        <p class="body-l">Velg omsetningen deres i dag og hvor mye dere tror et bedre salgssystem kan løfte den.</p>
+      </div>
+      <div class="calc-body">
+        <div class="calc-in">
+          <div class="slider">
+            <label class="op-label" for="calc-rev">Omsetning i dag</label>
+            <p class="slider-val"><span id="calc-rev-v">50 mill. kr</span></p>
+            <input type="range" id="calc-rev" min="0" max="26" step="1" value="12" aria-valuetext="50 millioner kroner" style="--f:.4615">
+            <div class="ticks" aria-hidden="true"><span>1 mill.</span><span style="--f:.5769">100 mill.</span><span class="end">2 mrd.</span></div>
+          </div>
+          <div class="slider">
+            <label class="op-label" for="calc-lift">Forbedring i omsetning</label>
+            <p class="slider-val"><span id="calc-lift-v">+10&nbsp;%</span> <span class="slider-sub" id="calc-lift-s">1,1x</span></p>
+            <input type="range" id="calc-lift" min="0" max="17" step="1" value="0" aria-valuetext="pluss 10 prosent" style="--f:0">
+            <div class="ticks" aria-hidden="true"><span>10 %</span><span style="--f:.5294">100 %</span><span class="end">10x</span></div>
+          </div>
+        </div>
+        <dl class="calc-out">
+          <div><dt>Ny omsetning</dt><dd id="calc-new">55 mill. kr</dd></div>
+          <div><dt>Økning i årlig omsetning</dt><dd id="calc-gain">5 mill. kr</dd></div>
+          <div><dt>Kursprisen som andel av økningen<span class="calc-sub" id="calc-share-s">50 000 kr (to deltakere) delt på 5 mill. kr</span></dt><dd id="calc-share">1&nbsp;%</dd></div>
+        </dl>
+      </div>
+      <p class="calc-note muted">Anslagene er deres egne. Regnestykket sammenligner kursprisen med omsetning, ikke resultat.</p>
+    </div>
   </div>
 </section>
 
@@ -389,5 +420,44 @@
     <span class="foot-links"><a class="op-label" href="/personvern/">Personvern</a><a class="op-label" href="https://operators.no">operators.no</a></span>
   </div>
 </footer>
+<script>
+/* Regnestykket. Trinnene er ikke lineære, så glideren styrer en indeks. */
+(function(){
+  var REV=[1,2,3,4,5,7.5,10,15,20,25,30,40,50,60,75,100,125,150,200,250,300,400,500,750,1000,1500,2000]; /* mill. kr */
+  var LIFT=[10,20,30,40,50,60,70,80,90,100,200,300,400,500,600,700,800,900]; /* prosent økning: 200 = 3x */
+  var PRICE=50000; /* to deltakere */
+  var NB=' ';
+  var rev=document.getElementById('calc-rev'), lift=document.getElementById('calc-lift');
+  if(!rev||!lift||!window.Intl) return;
+  function n(v,opt){return new Intl.NumberFormat('nb-NO',opt).format(v)}
+  function kr(v){
+    if(v>=1e9) return n(v/1e9,{maximumFractionDigits:2})+NB+'mrd. kr';
+    if(v>=1e6) return n(v/1e6,{maximumFractionDigits:v<1e7?2:1})+NB+'mill. kr';
+    return n(Math.round(v/1000)*1000,{maximumFractionDigits:0})+NB+'kr';
+  }
+  function set(id,t){document.getElementById(id).textContent=t}
+  function fill(el){el.style.setProperty('--f',(el.value/el.max).toFixed(4))}
+  function update(){
+    var r=REV[rev.value], p=LIFT[lift.value], m=1+p/100, base=r*1e6;
+    set('calc-rev-v',kr(base));
+    rev.setAttribute('aria-valuetext', r>=1000 ? n(r/1000,{maximumFractionDigits:1})+' milliarder kroner' : n(r,{maximumFractionDigits:1})+' millioner kroner');
+    if(p<=100){
+      set('calc-lift-v','+'+p+NB+'%'); set('calc-lift-s',n(m,{maximumFractionDigits:2})+'x');
+      lift.setAttribute('aria-valuetext','pluss '+p+' prosent');
+    }else{
+      set('calc-lift-v',m+'x'); set('calc-lift-s','+'+p+NB+'%');
+      lift.setAttribute('aria-valuetext',m+' ganger dagens omsetning');
+    }
+    var gain=base*p/100;
+    set('calc-new',kr(base*m));
+    set('calc-gain',kr(gain));
+    set('calc-share',n(PRICE/gain*100,{maximumSignificantDigits:2})+NB+'%');
+    set('calc-share-s',kr(PRICE)+' (to deltakere) delt på '+kr(gain));
+    fill(rev); fill(lift);
+  }
+  rev.addEventListener('input',update); lift.addEventListener('input',update);
+  update();
+})();
+</script>
 </body>
 </html>
