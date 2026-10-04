@@ -333,7 +333,7 @@
         <dl class="calc-out">
           <div><dt>Ny omsetning</dt><dd id="calc-new">55 mill. kr</dd></div>
           <div><dt>Økning i årlig omsetning</dt><dd id="calc-gain">5 mill. kr</dd></div>
-          <div><dt>Økning som dekker kursprisen<span class="calc-sub">50 000 kr for to deltakere</span></dt><dd id="calc-be">0,1&nbsp;%</dd></div>
+          <div><dt>Kursprisen som andel av økningen<span class="calc-sub" id="calc-share-s">50 000 kr (to deltakere) delt på 5 mill. kr</span></dt><dd id="calc-share">1&nbsp;%</dd></div>
         </dl>
       </div>
       <p class="calc-note muted">Anslagene er deres egne. Regnestykket sammenligner kursprisen med omsetning, ikke resultat.</p>
@@ -448,9 +448,11 @@
       set('calc-lift-v',m+'x'); set('calc-lift-s','+'+p+NB+'%');
       lift.setAttribute('aria-valuetext',m+' ganger dagens omsetning');
     }
+    var gain=base*p/100;
     set('calc-new',kr(base*m));
-    set('calc-gain',kr(base*p/100));
-    set('calc-be',n(PRICE/base*100,{maximumSignificantDigits:2})+NB+'%');
+    set('calc-gain',kr(gain));
+    set('calc-share',n(PRICE/gain*100,{maximumSignificantDigits:2})+NB+'%');
+    set('calc-share-s',kr(PRICE)+' (to deltakere) delt på '+kr(gain));
     fill(rev); fill(lift);
   }
   rev.addEventListener('input',update); lift.addEventListener('input',update);
