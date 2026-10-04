@@ -275,6 +275,7 @@ img{display:block;max-width:100%;height:auto}
 @media (max-width:760px){
   .h2{font-size:var(--op-size-display-l)}
   .section-head.split{display:block}
+  .span-7 > .quote:first-child{margin-top:var(--op-space-6)}
   .section-head.split .h2 + p{margin-top:var(--op-space-5)}
   .cards{grid-template-columns:1fr}
   .fit-card{grid-template-columns:1fr;padding:var(--op-space-5)}
