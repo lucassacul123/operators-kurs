@@ -167,7 +167,7 @@
 <section class="section">
   <div class="wrap grid">
     <div class="span-5">
-      <h2 class="h2">Kom som CEO og salgsleder sammen</h2>
+      <h2 class="h2">CEO og salgsleder bør komme sammen</h2>
     </div>
     <div class="span-7">
       <figure class="quote">
@@ -221,27 +221,24 @@
         <p class="op-label">Kort klipp · 7 min</p>
         <h3>Recruit, Ramp, Retain, Revenue</h3>
         <p>Salgslederens fire jobber.</p>
-        <div class="player" data-episode="30EzhRr43DfO1WSYfFAruh">
-          <a class="btn btn-ink play" href="https://open.spotify.com/episode/30EzhRr43DfO1WSYfFAruh" target="_blank" rel="noopener" aria-label="Spill av Recruit, Ramp, Retain, Revenue"><svg class="play-ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 4.5L15.5 10L6 15.5Z"/></svg>Spill av</a>
-          <p class="player-note">Spilles i Spotify-spilleren, som hentes først når du trykker.</p>
+        <div class="player">
+          <iframe src="https://open.spotify.com/embed/episode/30EzhRr43DfO1WSYfFAruh?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Spotify-avspiller: Recruit, Ramp, Retain, Revenue"></iframe>
         </div>
       </li>
       <li class="card">
         <p class="op-label">Operators #7 · 95 min</p>
         <h3>Operativsystemet for repeterbart salg</h3>
         <p>De seks modulene du bør forstå hvis du vil skalere salget.</p>
-        <div class="player" data-episode="2vmmyCBXLzyd8c555MQ7Wo">
-          <a class="btn btn-ink play" href="https://open.spotify.com/episode/2vmmyCBXLzyd8c555MQ7Wo" target="_blank" rel="noopener" aria-label="Spill av Operativsystemet for repeterbart salg"><svg class="play-ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 4.5L15.5 10L6 15.5Z"/></svg>Spill av</a>
-          <p class="player-note">Spilles i Spotify-spilleren, som hentes først når du trykker.</p>
+        <div class="player">
+          <iframe src="https://open.spotify.com/embed/episode/2vmmyCBXLzyd8c555MQ7Wo?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Spotify-avspiller: Operativsystemet for repeterbart salg"></iframe>
         </div>
       </li>
       <li class="card">
         <p class="op-label">Operators #10 · 80 min</p>
         <h3>No champion, no deal</h3>
         <p>Espens rammeverk for å bygge interne champions i B2B-salg.</p>
-        <div class="player" data-episode="0iq3wydethNPc8ojNbWYT8">
-          <a class="btn btn-ink play" href="https://open.spotify.com/episode/0iq3wydethNPc8ojNbWYT8" target="_blank" rel="noopener" aria-label="Spill av No champion, no deal"><svg class="play-ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 4.5L15.5 10L6 15.5Z"/></svg>Spill av</a>
-          <p class="player-note">Spilles i Spotify-spilleren, som hentes først når du trykker.</p>
+        <div class="player">
+          <iframe src="https://open.spotify.com/embed/episode/0iq3wydethNPc8ojNbWYT8?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Spotify-avspiller: No champion, no deal"></iframe>
         </div>
       </li>
       <li class="card">
@@ -462,54 +459,6 @@
   }
   rev.addEventListener('input',update); lift.addEventListener('input',update);
   update();
-})();
-</script>
-<script>
-/* Podkastspillere: Spotify hentes først når besøkeren trykker «Spill av». */
-(function(){
-  var boxes=document.querySelectorAll('.player[data-episode]');
-  if(!boxes.length) return;
-  var state='idle', api=null, queue=[], controllers=[];
-  function withApi(cb){
-    if(state==='ready') return cb(api);
-    if(state==='failed') return cb(null);
-    queue.push(cb);
-    if(state==='loading') return;
-    state='loading';
-    function settle(a){ if(state!=='loading') return; state=a?'ready':'failed'; api=a||null; queue.splice(0).forEach(function(f){f(api)}); }
-    window.onSpotifyIframeApiReady=settle;
-    var s=document.createElement('script');
-    s.src='https://open.spotify.com/embed/iframe-api/v1'; s.async=true;
-    s.onerror=function(){settle(null)};
-    document.head.appendChild(s);
-    setTimeout(function(){settle(null)},6000);
-  }
-  function title(box){ var f=box.querySelector('iframe'); if(f) f.setAttribute('title','Spotify-avspiller'); }
-  function plain(box,id){
-    box.innerHTML='<iframe src="https://open.spotify.com/embed/episode/'+id+'" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Spotify-avspiller"></iframe>';
-  }
-  function start(box){
-    var id=box.getAttribute('data-episode');
-    controllers.forEach(function(c){ try{c.pause()}catch(e){} });
-    box.classList.add('is-live');
-    box.innerHTML='<p class="player-note">Henter Spotify-spilleren …</p><div></div>';
-    var target=box.lastChild;
-    withApi(function(A){
-      if(!A){ plain(box,id); return; }
-      try{
-        A.createController(target,{uri:'spotify:episode:'+id,width:'100%',height:152},function(c){
-          controllers.push(c);
-          var note=box.querySelector('.player-note'); if(note) note.remove();
-          title(box);
-          c.addListener('ready',function(){ try{c.play()}catch(e){} });
-        });
-      }catch(e){ plain(box,id); }
-    });
-  }
-  Array.prototype.forEach.call(boxes,function(box){
-    var a=box.querySelector('a.play');
-    a.addEventListener('click',function(e){ e.preventDefault(); start(box); });
-  });
 })();
 </script>
 </body>

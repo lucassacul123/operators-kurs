@@ -186,15 +186,8 @@ img{display:block;max-width:100%;height:auto}
 .card-links a::after{content:"";position:absolute;inset:-12px -4px}   /* 44 px treffflate */
 .card{display:flex;flex-direction:column}
 .card h3 + p:has(+ .player){padding-bottom:var(--op-space-4)}
-/* Podkastspiller: plassholder i samme høyde som Spotify-spilleren, så siden ikke hopper */
-.player{margin-top:auto;min-height:152px;padding:var(--op-space-5);background:var(--op-surface-raised);
-  border-radius:var(--op-radius-sm);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:var(--op-space-3)}
-.player .play{gap:var(--op-space-2);padding-left:var(--op-space-4)}
-.play-ico{width:20px;height:20px;flex:none}
-.play-ico path{fill:currentColor;stroke:none}
-.card .player .player-note{margin-top:0;font-size:var(--op-size-caption);color:var(--op-text-muted);line-height:1.5}
-.player.is-live{padding:0;background:transparent;justify-content:flex-start;gap:0}
-.player.is-live .player-note{padding:var(--op-space-5)}
+/* Podkastspiller: Spotify, ferdiglastet, nederst i kortet */
+.player{margin-top:auto}
 .player iframe{display:block;width:100%;height:152px;border:0;border-radius:var(--op-radius-sm)}
 
 /* Passer */
