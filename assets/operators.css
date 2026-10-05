@@ -288,6 +288,7 @@ img{display:block;max-width:100%;height:auto}
 /* Mobil */
 @media (max-width:760px){
   .h2{font-size:var(--op-size-display-l)}
+  .hero .h1-sub{display:block;margin-top:var(--op-space-2);font-size:var(--op-size-display-l);line-height:1.15}
   .section-head.split{display:block}
   .span-7 > .quote:first-child{margin-top:var(--op-space-6)}
   .section-head.split .h2 + p{margin-top:var(--op-space-5)}
