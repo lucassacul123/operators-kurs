@@ -108,7 +108,9 @@ img{display:block;max-width:100%;height:auto}
 .section-head.split .h2 + p{grid-column:8 / span 5;margin-top:0}
 
 /* Topp */
-.site-head{padding:var(--op-space-5) 0}
+.site-head{position:sticky;top:0;z-index:20;padding:var(--op-space-3) 0;background:var(--op-surface);border-bottom:1px solid var(--op-border)}
+.site-head .btn-head{padding:var(--op-space-2) var(--op-space-4)}
+[id]{scroll-margin-top:5rem}
 .site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--op-space-4)}
 .site-head .op-logo{font-size:28px}
 
@@ -126,6 +128,19 @@ img{display:block;max-width:100%;height:auto}
   border-top:1px solid var(--op-border);font-size:var(--op-size-body-l);line-height:1.5}
 .outcomes li:last-child{border-bottom:1px solid var(--op-border)}
 .outcomes b{font-weight:var(--op-weight-bold)}
+.hero-body{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--op-space-5);align-items:center}
+.hero-copy{grid-column:span 7;min-width:0}
+/* Rommet: åtte plasser rundt O-en, én lilla. Brand spec §4. */
+.room{grid-column:9 / span 4;margin:0;color:var(--op-ink)}
+.room svg{display:block;width:100%;max-width:260px;height:auto}
+.room .seat-you{fill:var(--op-accent)}
+.room figcaption{margin-top:var(--op-space-4)}
+/* Søk-blokk: O-merket, én faktalinje, én knapp. Klaring rundt O-en = O-ens høyde. */
+.cta-band{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:var(--op-space-6);
+  margin-top:var(--op-space-8);padding:var(--op-space-6);background:var(--op-surface-raised);border-radius:var(--op-radius-sm)}
+.cta-mark{width:32px;height:32px;display:block;color:var(--op-mark)}
+.cta-band p{font-size:var(--op-size-body-l);line-height:1.5;max-width:none}
+.cta-band b{font-weight:var(--op-weight-bold)}
 .facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 var(--op-space-5);margin-top:var(--op-space-7)}
 .fact{border-top:1px solid var(--op-text);padding-top:var(--op-space-3)}
 .fact .v{font-family:var(--op-font-mono);font-weight:var(--op-weight-medium);font-size:var(--op-size-caption);
@@ -289,6 +304,11 @@ img{display:block;max-width:100%;height:auto}
 @media (max-width:760px){
   .h2{font-size:var(--op-size-display-l)}
   .section-head.split{display:block}
+  .hero-body{display:block}
+  .room{display:none}
+  .cta-band{grid-template-columns:minmax(0,1fr);gap:var(--op-space-5)}
+  .cta-band .btn{justify-self:start}
+  .cta-mark{width:24px;height:24px}
   .span-7 > .quote:first-child{margin-top:var(--op-space-6)}
   .section-head.split .h2 + p{margin-top:var(--op-space-5)}
   .cards{grid-template-columns:1fr}
