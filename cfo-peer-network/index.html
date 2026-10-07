@@ -24,8 +24,11 @@
 .site-head{position:sticky;top:0;z-index:20;padding:var(--op-space-3) 0;background:var(--op-surface);border-bottom:1px solid var(--op-border)}
 .site-head .btn-head{padding:var(--op-space-2) var(--op-space-4)}
 [id]{scroll-margin-top:5rem}
-.hero h1{max-width:24ch}
-.hero-body{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--op-space-5);align-items:center}
+.hero h1{max-width:18ch}
+.hero-body{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--op-space-5);align-items:start}
+/* Hero: tekst, fakta og knapp i venstre kolonne, bildet ved siden av */
+.hero .hero-copy .facts{margin-top:var(--op-space-6);grid-template-columns:repeat(2,minmax(0,1fr));row-gap:var(--op-space-5);max-width:30rem}
+.hero .hero-copy .cta-row{margin-top:var(--op-space-6)}
 .hero-copy{grid-column:span 7;min-width:0}
 .cta-band{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:var(--op-space-6);
   margin-top:var(--op-space-8);padding:var(--op-space-6);background:var(--op-surface-raised);border-radius:var(--op-radius-sm)}
@@ -70,14 +73,8 @@
 .speaker .n{font-weight:var(--op-weight-bold);font-size:var(--op-size-body-l);line-height:1.3}
 .speaker .op-label{margin-top:var(--op-space-1)}
 
-/* Fra rommet */
-.prev{border-top:1px solid var(--op-text);padding-top:var(--op-space-4)}
-.prev h3{font-size:var(--op-size-display-m);line-height:1.2;margin-top:var(--op-space-3)}
-.prev p:not(.op-label){margin-top:var(--op-space-3);font-size:var(--op-size-body-l);line-height:1.55}
-.quotes{display:grid;gap:var(--op-space-7)}
-.todo{background:var(--op-grey-200);color:var(--op-ink);padding:0 .2em;border-radius:var(--op-radius-sm)}
-.quote.is-todo blockquote{color:var(--op-text-muted)}
-.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--op-space-5);margin-top:var(--op-space-8)}
+/* Bilder fra samlingene */
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--op-space-5)}
 .g-img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--op-radius-sm)}
 
 /* Hvem som betaler */
@@ -109,32 +106,30 @@
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <p class="op-label">CFO Peer Network · For finansledere i vekstselskaper</p>
-    <h1 style="margin-top:var(--op-space-5)">Ikke gjør de samme feilene andre CFO-er har gjort før deg.</h1>
-    <div class="op-rule" aria-hidden="true"></div>
     <div class="hero-body">
       <div class="hero-copy">
-        <div class="lede">
-          <p>Lær av CFO-er som ligger litt foran deg, bygg et nettverk av finansledere, og få svar før du tar de store beslutningene.</p>
+        <p class="op-label">CFO Peer Network · For finansledere i vekstselskaper</p>
+        <h1 style="margin-top:var(--op-space-5)">Ikke gjør de samme feilene andre CFO-er har gjort før deg.</h1>
+        <div class="op-rule" aria-hidden="true"></div>
+        <p class="lede">Lær av CFO-er som ligger litt foran deg, bygg et nettverk av finansledere, og få svar før du tar de store beslutningene.</p>
+
+        <div class="facts" role="list">
+          <div class="fact" role="listitem"><div class="op-label">Deep Dives</div><div class="v">4 i året</div></div>
+          <div class="fact" role="listitem"><div class="op-label">Lukkede middager</div><div class="v">2 i året</div></div>
+          <div class="fact" role="listitem"><div class="op-label">CFO Summits</div><div class="v">Garantert plass</div></div>
+          <div class="fact" role="listitem"><div class="op-label">WhatsApp-gruppen</div><div class="v">Hele året</div></div>
         </div>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://tally.so/r/ODWy2K" data-tally-open="ODWy2K" data-tally-layout="modal" data-tally-width="640" data-tally-auto-close="0">Meld interesse</a>
+          <a class="op-link" href="#deep-dive">Se neste Deep Dive</a>
+        </div>
+        <p class="cta-note muted">Tar under ett minutt.</p>
       </div>
       <figure class="hero-photo" data-bilde="hero">
         <img src="/assets/img/cfo/hero-samtale.jpg" alt="En finansleder ler i en samtale under et CFO Summit" width="719" height="899">
       </figure>
     </div>
-
-    <div class="facts" role="list">
-      <div class="fact" role="listitem"><div class="op-label">Deep Dives</div><div class="v">4 i året</div></div>
-      <div class="fact" role="listitem"><div class="op-label">Lukkede middager</div><div class="v">2 i året</div></div>
-      <div class="fact" role="listitem"><div class="op-label">CFO Summits</div><div class="v">Garantert plass</div></div>
-      <div class="fact" role="listitem"><div class="op-label">WhatsApp-gruppen</div><div class="v">Hele året</div></div>
-    </div>
-
-    <div class="cta-row">
-      <a class="btn btn-primary" href="https://tally.so/r/ODWy2K" data-tally-open="ODWy2K" data-tally-layout="modal" data-tally-width="640" data-tally-auto-close="0">Meld interesse</a>
-      <a class="op-link" href="#deep-dive">Se neste Deep Dive</a>
-    </div>
-    <p class="cta-note muted">Tar under ett minutt.</p>
   </div>
 </section>
 
@@ -217,32 +212,10 @@
   </div>
 </section>
 
-<!-- FRA ROMMET -->
-<section class="section">
-  <div class="wrap grid">
-    <div class="span-12 section-head">
-      <p class="op-label">Fra rommet</p>
-      <h2 class="h2">Slik har det sett ut</h2>
-    </div>
-    <div class="span-6">
-      <div class="prev">
-        <p class="op-label">Tidligere Deep Dive</p>
-        <h3>Exploring the modern CFO AI stack</h3>
-        <p>Håkon Kalbakk (Findable) og Øyvind Osjord (Easee) viste hvordan de automatiserte avstemming og fakturaflyt, tok i bruk agenter i støttefunksjoner og håndterte GDPR og datamaskering.</p>
-      </div>
-    </div>
-    <div class="col-right quotes">
-      <!-- SITAT: anonyme, fra tilbakemeldingsskjemaet etter CFO Summit høsten 2024. -->
-      <figure class="quote">
-        <blockquote>«Alt i alt var det et arrangement som ga mersmak.»</blockquote>
-        <figcaption class="op-label">Deltaker, CFO Summit</figcaption>
-      </figure>
-      <figure class="quote">
-        <blockquote>«Very well organized and super relevant.»</blockquote>
-        <figcaption class="op-label">Deltaker, CFO Summit</figcaption>
-      </figure>
-    </div>
-    <div class="span-12 gallery">
+<!-- BILDER FRA SAMLINGENE -->
+<section class="section photos">
+  <div class="wrap">
+    <div class="gallery">
       <img class="g-img" src="/assets/img/cfo/summit-fireside.jpg" alt="Fireside-samtale foran publikum på et CFO Summit" width="1400" height="933" loading="lazy">
       <img class="g-img" src="/assets/img/cfo/summit-rom.jpg" alt="Innlegg foran finansledere ved bordene på et CFO Summit" width="930" height="620" loading="lazy">
       <img class="g-img" src="/assets/img/cfo/summit-bord-32.jpg" alt="Finansledere rundt bordet under et CFO Summit" width="1400" height="933" loading="lazy">
