@@ -73,6 +73,15 @@
 .speaker .n{font-weight:var(--op-weight-bold);font-size:var(--op-size-body-l);line-height:1.3}
 .speaker .op-label{margin-top:var(--op-space-1)}
 
+/* Luft mellom seksjoner: bare over streken, ikke dobbelt. Mørke seksjoner har luft på begge sider. */
+.section{padding:var(--op-space-8) 0 0}
+.section[data-theme="inverse"]{padding:var(--op-space-8) 0}
+.section:not([data-theme]) + .section[data-theme="inverse"],
+.section + .photo-band{margin-top:var(--op-space-8)}
+.section > .wrap::before{margin-bottom:var(--op-space-5)}
+.section-head{margin-bottom:var(--op-space-6)}
+.cta-band{margin-top:var(--op-space-7)}
+
 /* Bilder fra samlingene */
 .gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--op-space-5)}
 .g-img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--op-radius-sm)}
