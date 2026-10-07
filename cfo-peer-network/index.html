@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preload" href="/assets/fonts/archivo-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/archivo-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/operators.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<title>CFO Peer Network · Operators</title>
+<meta name="description" content="Medlemskap for CFO-er og finansledere i vekstselskaper: fire Deep Dives og to lukkede middager i året, WhatsApp-gruppe og garantert plass på CFO Summits.">
+<link rel="canonical" href="https://kurs.operators.no/cfo-peer-network/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ikke gjør de samme feilene andre CFO-er har gjort før deg">
+<meta property="og:description" content="Medlemskap for CFO-er og finansledere i vekstselskaper: fire Deep Dives og to lukkede middager i året, WhatsApp-gruppe og garantert plass på CFO Summits.">
+<meta property="og:url" content="https://kurs.operators.no/cfo-peer-network/">
+<meta property="og:image" content="https://kurs.operators.no/assets/img/cfo/summit-bord-32.jpg">
+<meta property="og:locale" content="nb_NO">
+<meta name="twitter:card" content="summary_large_image">
+<script async src="https://tally.so/widgets/embed.js"></script>
+<style>
+/* Regler fra den nyere versjonen av operators.css som ennå ikke ligger på main.
+   Holdes på denne siden, så kurssiden ikke endres. */
+.site-head{position:sticky;top:0;z-index:20;padding:var(--op-space-3) 0;background:var(--op-surface);border-bottom:1px solid var(--op-border)}
+.site-head .btn-head{padding:var(--op-space-2) var(--op-space-4)}
+[id]{scroll-margin-top:5rem}
+.hero h1{max-width:24ch}
+.hero-body{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--op-space-5);align-items:center}
+.hero-copy{grid-column:span 7;min-width:0}
+.cta-band{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:var(--op-space-6);
+  margin-top:var(--op-space-8);padding:var(--op-space-6);background:var(--op-surface-raised);border-radius:var(--op-radius-sm)}
+.cta-mark{width:32px;height:32px;display:block;color:var(--op-mark)}
+.cta-band p{font-size:var(--op-size-body-l);line-height:1.5;max-width:none}
+.cta-band b{font-weight:var(--op-weight-bold)}
+@media (max-width:760px){
+  .hero-body{display:block}
+  .cta-band{grid-template-columns:minmax(0,1fr);gap:var(--op-space-5)}
+  .cta-band .btn{justify-self:start}
+  .cta-mark{width:24px;height:24px}
+}
+
+/* CFO Peer Network */
+
+/* Hero */
+.hero-photo{grid-column:9 / span 4;margin:0}
+.hero-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--op-radius-sm)}
+
+/* Spørsmål uten nummer: rekkefølgen betyr ingenting */
+.questions.plain li{grid-template-columns:1fr}
+
+/* Tre resultater */
+.pillar h3{line-height:1.2}
+.pillar > p:not(.op-label){font-size:var(--op-size-body-l);line-height:1.55}
+
+/* Neste Deep Dive */
+.dd-head{display:flex;align-items:flex-start;gap:var(--op-space-5);margin-top:var(--op-space-5)}
+.date-tile{flex:none;width:58px;height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:var(--op-paper);color:var(--op-ink);border-radius:var(--op-radius-sm)}
+.date-tile .d{font-weight:var(--op-weight-black);font-size:1.5rem;line-height:1;letter-spacing:var(--op-track-heading)}
+.date-tile .m{font-family:var(--op-font-mono);font-weight:var(--op-weight-medium);font-size:var(--op-size-label);
+  letter-spacing:var(--op-track-label);text-transform:uppercase;margin-top:var(--op-space-1)}
+.dd h2{font-size:var(--op-size-display-xl);font-weight:var(--op-weight-black);letter-spacing:var(--op-track-display);min-width:0}
+.dd .role{margin-top:var(--op-space-2);font-size:var(--op-size-body-l);color:var(--op-text-muted)}
+.dd .body-l{margin-top:var(--op-space-6)}
+.facts.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.speakers{grid-column:8 / span 5;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--op-space-4);align-self:start}
+.speaker{margin:0;min-width:0}
+.speaker img{width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:var(--op-radius-sm)}
+.speaker figcaption{margin-top:var(--op-space-3)}
+.speaker .n{font-weight:var(--op-weight-bold);font-size:var(--op-size-body-l);line-height:1.3}
+.speaker .op-label{margin-top:var(--op-space-1)}
+
+/* Fra rommet */
+.prev{border-top:1px solid var(--op-text);padding-top:var(--op-space-4)}
+.prev h3{font-size:var(--op-size-display-m);line-height:1.2;margin-top:var(--op-space-3)}
+.prev p:not(.op-label){margin-top:var(--op-space-3);font-size:var(--op-size-body-l);line-height:1.55}
+.quotes{display:grid;gap:var(--op-space-7)}
+.todo{background:var(--op-grey-200);color:var(--op-ink);padding:0 .2em;border-radius:var(--op-radius-sm)}
+.quote.is-todo blockquote{color:var(--op-text-muted)}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--op-space-5);margin-top:var(--op-space-8)}
+.g-img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--op-radius-sm)}
+
+/* Hvem som betaler */
+.payer{grid-column:5 / span 8;margin-top:var(--op-space-5)}
+.payer p{font-size:var(--op-size-body-l);line-height:1.55}
+
+@media (max-width:760px){
+  .hero-photo{display:none}
+  .facts.three{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .speakers{grid-column:auto / span 4;margin-top:var(--op-space-7)}
+  .gallery{grid-template-columns:1fr}
+  .gallery > :nth-child(n+2){display:none}
+  .payer{grid-column:auto / span 4}
+}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="op-logo" href="https://operators.no" aria-label="Operators">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><mask id="opO-h" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/><ellipse cx="50" cy="50" rx="16.5" ry="28" fill="#000" transform="rotate(-20 50 50)"/></mask><circle cx="50" cy="50" r="47" fill="currentColor" mask="url(#opO-h)"/></svg>PERATORS<i class="op-dot">.</i>
+    </a>
+    <a class="btn btn-ink btn-head" href="https://tally.so/r/ODWy2K" data-tally-open="ODWy2K" data-tally-layout="modal" data-tally-width="640" data-tally-auto-close="0">Meld interesse</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <p class="op-label">CFO Peer Network · For finansledere i vekstselskaper</p>
+    <h1 style="margin-top:var(--op-space-5)">Ikke gjør de samme feilene andre CFO-er har gjort før deg.</h1>
+    <div class="op-rule" aria-hidden="true"></div>
+    <div class="hero-body">
+      <div class="hero-copy">
+        <div class="lede">
+          <p>Lær av CFO-er som ligger litt foran deg, bygg et nettverk av finansledere, og få svar før du tar de store beslutningene.</p>
+        </div>
+      </div>
+      <figure class="hero-photo" data-bilde="hero">
+        <img src="/assets/img/cfo/hero-samtale.jpg" alt="En finansleder ler i en samtale under et CFO Summit" width="719" height="899">
+      </figure>
+    </div>
+
+    <div class="facts" role="list">
+      <div class="fact" role="listitem"><div class="op-label">Deep Dives</div><div class="v">4 i året</div></div>
+      <div class="fact" role="listitem"><div class="op-label">Lukkede middager</div><div class="v">2 i året</div></div>
+      <div class="fact" role="listitem"><div class="op-label">CFO Summits</div><div class="v">Garantert plass</div></div>
+      <div class="fact" role="listitem"><div class="op-label">WhatsApp-gruppen</div><div class="v">Hele året</div></div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://tally.so/r/ODWy2K" data-tally-open="ODWy2K" data-tally-layout="modal" data-tally-width="640" data-tally-auto-close="0">Meld interesse</a>
+      <a class="op-link" href="#deep-dive">Se neste Deep Dive</a>
+    </div>
+    <p class="cta-note muted">Tar under ett minutt.</p>
+  </div>
+</section>
+
+<!-- PROBLEMET -->
+<section class="section">
+  <div class="wrap grid">
+    <div class="span-8">
+      <h2 class="h2">Beslutningene du ikke kan ta om igjen</h2>
+      <ol class="questions plain">
+        <li><span>Hvor mye runway er nok, og når bør neste runde starte?</span></li>
+        <li><span>Egenkapital, gjeld eller en kombinasjon?</span></li>
+        <li><span>Hvordan bygger du en finansfunksjon som tåler veksten uten å ansette for tidlig?</span></li>
+        <li><span>Hva må være på plass før ekspansjon, oppkjøp eller exit?</span></li>
+      </ol>
+      <p class="body-l">Rådgivere har meninger om alt dette. Få av dem har sittet med ansvaret selv. Her møter du folk som har gjort det.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DETTE FÅR DU -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="op-label">Medlemskapet</p>
+      <h2 class="h2">Dette får du</h2>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <p class="op-label">Erfaringer</p>
+        <h3>Svar fra dem som har gjort det før deg</h3>
+        <p>Fire Deep Dives i året, 90 minutter hver. Erfarne CFO-er viser hvordan de løste et konkret problem, og hva de ville gjort annerledes. Playbooks du kan ta rett inn i eget arbeid følger med.</p>
+      </div>
+      <div class="pillar">
+        <p class="op-label">Nettverk</p>
+        <h3>De samme finanslederne, gang etter gang</h3>
+        <p>Du møter mange av de samme folkene igjen på Deep Dives, middager og CFO Summits, der du har garantert plass. Det er slik relasjoner bygges.</p>
+      </div>
+      <div class="pillar">
+        <p class="op-label">Sparring</p>
+        <h3>Hjelp når du står i det</h3>
+        <p>I WhatsApp-gruppen svarer andre CFO-er og finansledere mellom samlingene. To lukkede middager i året under Chatham House-regler gir rom for det du ikke tar i en gruppechat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<figure class="photo-band" data-bilde="band">
+  <div class="wrap"><img src="/assets/img/cfo/middag.jpg" alt="Deltakere skåler rundt bordet under en lukket middag" width="1600" height="900" loading="lazy" style="object-position:45% 50%"></div>
+</figure>
+
+<!-- NESTE DEEP DIVE -->
+<section class="section dd" data-theme="inverse" id="deep-dive">
+  <div class="wrap grid">
+    <div class="span-7" style="min-width:0">
+      <p class="op-label">Neste Deep Dive</p>
+      <div class="dd-head">
+        <div class="date-tile" aria-label="3. november"><span class="d">3</span><span class="m">nov</span></div>
+        <div style="min-width:0">
+          <h2>Headless Finance</h2>
+          <p class="role">Two CFOs, Two Playbooks</p>
+        </div>
+      </div>
+      <p class="body-l">To CFO-er viser hvordan de har bygget finansfunksjonen i hvert sitt selskap, hva som virket og hva de ville gjort annerledes.</p>
+      <div class="facts three" role="list">
+        <div class="fact" role="listitem"><div class="op-label">Dato</div><div class="v">3. november 2026</div></div>
+        <div class="fact" role="listitem"><div class="op-label">Format</div><div class="v">Hybrid</div></div>
+        <div class="fact" role="listitem"><div class="op-label">Lengde</div><div class="v">90 minutter</div></div>
+      </div>
+    </div>
+    <div class="speakers">
+      <figure class="speaker">
+        <img src="/assets/img/cfo/hobbelstad.jpg" alt="Portrett av Ole Marius Hobbelstad" width="252" height="386" loading="lazy">
+        <figcaption><div class="n">Ole Marius Hobbelstad</div><div class="op-label">CFO · Easee</div></figcaption>
+      </figure>
+      <figure class="speaker">
+        <img src="/assets/img/cfo/wang.jpg" alt="Portrett av Christoffer Wang" width="252" height="386" loading="lazy">
+        <figcaption><div class="n">Christoffer Wang</div><div class="op-label">CFO · Arundo Analytics</div></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- FRA ROMMET -->
+<section class="section">
+  <div class="wrap grid">
+    <div class="span-12 section-head">
+      <p class="op-label">Fra rommet</p>
+      <h2 class="h2">Slik har det sett ut</h2>
+    </div>
+    <div class="span-6">
+      <div class="prev">
+        <p class="op-label">Tidligere Deep Dive</p>
+        <h3>Exploring the modern CFO AI stack</h3>
+        <p>Håkon Kalbakk (Findable) og Øyvind Osjord (Easee) viste hvordan de automatiserte avstemming og fakturaflyt, tok i bruk agenter i støttefunksjoner og håndterte GDPR og datamaskering.</p>
+      </div>
+    </div>
+    <div class="col-right quotes">
+      <!-- SITAT: anonyme, fra tilbakemeldingsskjemaet etter CFO Summit høsten 2024. -->
+      <figure class="quote">
+        <blockquote>«Alt i alt var det et arrangement som ga mersmak.»</blockquote>
+        <figcaption class="op-label">Deltaker, CFO Summit</figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>«Very well organized and super relevant.»</blockquote>
+        <figcaption class="op-label">Deltaker, CFO Summit</figcaption>
+      </figure>
+    </div>
+    <div class="span-12 gallery">
+      <img class="g-img" src="/assets/img/cfo/summit-fireside.jpg" alt="Fireside-samtale foran publikum på et CFO Summit" width="1400" height="933" loading="lazy">
+      <img class="g-img" src="/assets/img/cfo/summit-rom.jpg" alt="Innlegg foran finansledere ved bordene på et CFO Summit" width="930" height="620" loading="lazy">
+      <img class="g-img" src="/assets/img/cfo/summit-bord-32.jpg" alt="Finansledere rundt bordet under et CFO Summit" width="1400" height="933" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- HVEM DET PASSER FOR -->
+<section class="section fit">
+  <div class="wrap grid">
+    <p class="op-label span-12">Hvem det passer for</p>
+    <h2 class="h2 span-4">Opptak etter en samtale</h2>
+    <div class="fit-card span-8">
+      <div>
+        <h3>Passer for deg som</h3>
+        <ul class="dash">
+          <li>er CFO, VP Finance eller øverste finansielle leder</li>
+          <li>jobber i et selskap med tydelige vekstambisjoner</li>
+          <li>vil bidra med egne erfaringer, ikke bare hente</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Passer ikke hvis du</h3>
+        <ul class="dash">
+          <li>vil selge rådgivning, revisjon, rekruttering eller programvare</li>
+          <li>ser etter en minglearena</li>
+        </ul>
+      </div>
+    </div>
+    <div class="payer">
+      <p>Medlemskapet betales av medlemmene. Medlemslisten deles aldri med partnere.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIK BLIR DU MED -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="h2">Slik blir du med</h2>
+    </div>
+    <ol class="steps">
+      <li>
+        <span class="op-label">Steg 1 · Interesse</span>
+        <h3>Meld interesse</h3>
+        <p class="body-l">Navn, rolle og selskap. Under ett minutt.</p>
+      </li>
+      <li>
+        <span class="op-label">Steg 2 · Samtale</span>
+        <h3>En kort samtale</h3>
+        <p class="body-l">Vi hører om rollen din og hva du trenger.</p>
+      </li>
+      <li>
+        <span class="op-label">Steg 3 · Tilbud</span>
+        <h3>Pris og vilkår</h3>
+        <p class="body-l">Passer det, får du et tilbud. Du blir ikke medlem før både du og vi mener at det er en god fit.</p>
+      </li>
+    </ol>
+    <div class="cta-band">
+      <svg class="cta-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><mask id="opO-c1" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/><ellipse cx="50" cy="50" rx="16.5" ry="28" fill="#000" transform="rotate(-20 50 50)"/></mask><circle cx="50" cy="50" r="47" fill="currentColor" mask="url(#opO-c1)"/></svg>
+      <p><b>Neste Deep Dive er 3. november.</b></p>
+      <a class="btn btn-ink" href="https://tally.so/r/ODWy2K" data-tally-open="ODWy2K" data-tally-layout="modal" data-tally-width="640" data-tally-auto-close="0">Meld interesse</a>
+    </div>
+  </div>
+</section>
+
+<!-- SPØRSMÅL -->
+<section class="section faq">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="op-label">Spørsmål</p>
+      <h2 class="h2">Vanlige spørsmål</h2>
+    </div>
+    <div class="faq-cols">
+      <div class="qa">
+        <h3>Hva koster det?</h3>
+        <p>Prisen går vi gjennom i samtalen, før du bestemmer deg.</p>
+      </div>
+      <div class="qa">
+        <h3>Må jeg delta på alt?</h3>
+        <p>Nei. Du velger selv hva du er med på.</p>
+      </div>
+      <div class="qa">
+        <h3>Er dette en peer group?</h3>
+        <p>Nei. En peer group er en fast gruppe på åtte ledere som møtes jevnlig. CFO Peer Network er et medlemskap med faste samlinger gjennom året, der du møter et bredere utvalg finansledere.</p>
+      </div>
+      <div class="qa">
+        <h3>Er WhatsApp-gruppen bare for medlemmer?</h3>
+        <p>Nei, ikke i dag. Den er åpen for et bredere utvalg finansledere, og det er derfor spørsmålene blir besvart.</p>
+      </div>
+      <div class="qa">
+        <h3>Må jeg være medlem for å delta på CFO Summits?</h3>
+        <p>Nei. Andre vurderes for hvert arrangement. Medlemmer er sikret plass.</p>
+      </div>
+      <div class="qa">
+        <h3>Kan rådgivere og leverandører bli med?</h3>
+        <p>Nei. Nettverket er for ledere med finansansvar i egen virksomhet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERESSE -->
+<section class="section apply" data-theme="inverse" id="interesse">
+  <div class="wrap grid">
+    <div class="span-7">
+      <p class="op-label">Interesse</p>
+      <h2 style="margin-top:var(--op-space-4)">Meld interesse</h2>
+      <p class="body-l" style="margin-top:var(--op-space-5)">Navn, rolle og selskap. Vi tar kontakt for en kort samtale.</p>
+      <div style="margin-top:var(--op-space-6)">
+        <a class="btn btn-paper" href="https://tally.so/r/ODWy2K" data-tally-open="ODWy2K" data-tally-layout="modal" data-tally-width="640" data-tally-auto-close="0">Meld interesse</a>
+      </div>
+      <p class="contact muted">Spørsmål: <a class="op-link" href="mailto:lucas@operators.no">lucas@operators.no</a>. Les hvordan vi behandler opplysningene i <a class="op-link" href="/personvern/">personvernerklæringen</a>.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <a class="op-logo" href="https://operators.no" aria-label="Operators">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><mask id="opO-f" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/><ellipse cx="50" cy="50" rx="16.5" ry="28" fill="#000" transform="rotate(-20 50 50)"/></mask><circle cx="50" cy="50" r="47" fill="currentColor" mask="url(#opO-f)"/></svg>PERATORS<i class="op-dot">.</i>
+    </a>
+    <span class="foot-links"><a class="op-label" href="/personvern/">Personvern</a><a class="op-label" href="https://operators.no">operators.no</a></span>
+  </div>
+</footer>
+</body>
+</html>
