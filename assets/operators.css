@@ -79,6 +79,8 @@ img{display:block;max-width:100%;height:auto}
 .btn-ink:hover{background:var(--op-grey-700)}
 [data-theme="inverse"] .btn-paper{background:var(--op-paper);color:var(--op-ink)}
 [data-theme="inverse"] .btn-paper:hover{background:var(--op-grey-200)}
+.btn-line{background:transparent;color:var(--op-text);box-shadow:inset 0 0 0 1.5px currentColor}  /* sekundær vei inn */
+.btn-line:hover{background:var(--op-text);color:var(--op-surface)}
 .arrow{width:20px;height:20px;flex:none}
 .arrow path{fill:none;stroke:currentColor;stroke-width:1.15;stroke-linecap:butt;stroke-linejoin:miter;vector-effect:non-scaling-stroke}
 
