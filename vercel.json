@@ -4,6 +4,11 @@
   "redirects": [
     { "source": "/", "destination": "/b2b-salg/", "permanent": false }
   ],
+  "rewrites": [
+    { "source": "/b2b-salg/sjekk/", "destination": "https://operators-meddic-sjekk.vercel.app/" },
+    { "source": "/b2b-salg/sjekk/api/resultat/", "destination": "https://operators-meddic-sjekk.vercel.app/api/resultat" },
+    { "source": "/b2b-salg/sjekk/:path*", "destination": "https://operators-meddic-sjekk.vercel.app/:path*" }
+  ],
   "headers": [
     {
       "source": "/assets/fonts/(.*)",
