@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preload" href="/assets/fonts/archivo-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/archivo-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/operators.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<title>MEDDIC i praksis · Operators</title>
+<meta name="description" content="Playbook av Espen Sjaavik: hva MEDDIC er, hva elementene betyr, og hvordan dere tar det i bruk i forecast-møter og deal reviews. Med en sjekk av hvor systematisk dere selger.">
+<link rel="canonical" href="https://kurs.operators.no/meddic-i-praksis/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MEDDIC i praksis: slik kommer dere i gang">
+<meta property="og:description" content="Playbook av Espen Sjaavik. Hva MEDDIC er, hva elementene betyr, og hvordan dere tar det i bruk i forecast-møter og deal reviews.">
+<meta property="og:url" content="https://kurs.operators.no/meddic-i-praksis/">
+<meta property="og:image" content="https://kurs.operators.no/assets/img/b2b-salg/espen-gate.jpg">
+<meta property="og:locale" content="nb_NO">
+<meta name="twitter:card" content="summary_large_image">
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/b2b-salg/sjekk/embed.js?v=2"></script>
+<style>
+/* Bare for denne siden. Følger PDF-en MEDDIC i praksis (v2). */
+.pb-folio{display:inline-flex;align-items:center;gap:var(--op-space-3)}
+.pb-folio img{height:28px;width:auto}
+.pb-hero{padding:var(--op-space-8) 0 var(--op-space-7)}
+.pb-hero h1{font-size:var(--op-size-display-xl);font-weight:var(--op-weight-black);letter-spacing:var(--op-track-display);margin-top:var(--op-space-4)}
+.pb-hero .op-rule{margin:var(--op-space-6) 0}
+.pb-hero .lede{font-size:clamp(1.125rem,1rem + .5vw,1.375rem);line-height:1.5;max-width:52ch}
+.pb-hero .btn{margin-top:var(--op-space-6)}
+.pb-av{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:var(--op-space-6);align-items:end;margin-top:var(--op-space-8);max-width:48rem}
+.pb-av h2{font-size:var(--op-size-display-l);font-weight:var(--op-weight-black);letter-spacing:var(--op-track-display);margin-top:var(--op-space-2)}
+.pb-av .rolle{margin-top:var(--op-space-2)}
+.pb-av .bio{margin-top:var(--op-space-4);padding-top:var(--op-space-4);border-top:1px solid var(--op-border)}
+.pb-innhold{list-style:none;margin:var(--op-space-5) 0 0;padding:0;max-width:40rem}
+.pb-innhold li{display:grid;grid-template-columns:3rem 1fr;padding:var(--op-space-3) 0;border-top:1px solid var(--op-border)}
+.pb-innhold li:last-child{border-bottom:1px solid var(--op-border)}
+.pb-innhold a{color:var(--op-text);text-decoration:none;font-weight:var(--op-weight-bold)}
+.pb-innhold a:hover{text-decoration:underline;text-underline-offset:3px}
+.pb-kap-head{display:grid;grid-template-columns:4.5rem 1fr;align-items:baseline;margin-bottom:var(--op-space-6)}
+.pb-kap-head .nr{font-size:var(--op-size-display-xl);font-weight:var(--op-weight-black);line-height:1}
+.pb-kap-head h2{font-size:var(--op-size-display-l);font-weight:var(--op-weight-black);letter-spacing:var(--op-track-display)}
+.pb-tekst{max-width:var(--op-measure)}
+.pb-tekst > * + *{margin-top:var(--op-space-4)}
+.pb-tekst h3{font-size:var(--op-size-display-m);margin-top:var(--op-space-7)}
+.pb-tekst h3:first-child{margin-top:0}
+.pb-tekst p,.pb-tekst li{font-size:var(--op-size-body-l)}
+.pb-tekst ul,.pb-tekst ol{padding-left:1.25rem;margin-bottom:0}
+.pb-tekst li + li{margin-top:var(--op-space-2)}
+.pb-tabell{width:100%;border-collapse:collapse;margin-top:var(--op-space-5);font-size:var(--op-size-body)}
+.pb-tabell th{font-family:var(--op-font-mono);font-weight:var(--op-weight-medium);font-size:var(--op-size-label);text-transform:uppercase;letter-spacing:var(--op-track-label);color:var(--op-text-muted);text-align:left;padding:var(--op-space-3) var(--op-space-4) var(--op-space-3) 0;border-top:1px solid var(--op-ink);border-bottom:1px solid var(--op-ink);vertical-align:bottom}
+.pb-tabell td{padding:var(--op-space-4) var(--op-space-4) var(--op-space-4) 0;border-bottom:1px solid var(--op-border);vertical-align:top;line-height:1.5}
+.pb-tabell td:first-child{font-weight:var(--op-weight-bold)}
+.pb-tabell.skjema td:not(:first-child):not(:nth-child(2)){min-width:7rem;background:var(--op-surface-raised);border-left:1px solid var(--op-border)}
+.pb-boks{background:var(--op-surface-raised);border:1px solid var(--op-border);border-radius:var(--op-radius-sm);padding:var(--op-space-6);margin-top:var(--op-space-6);max-width:none}
+.pb-boks > .op-label{margin-bottom:var(--op-space-4)}
+.pb-boks > * + *{margin-top:var(--op-space-4)}
+.pb-boks.strek{border-left:3px solid var(--op-ink)}
+.pb-trinn{list-style:none;padding:0;margin:0}
+.pb-trinn li{display:grid;grid-template-columns:2.25rem 1fr;align-items:baseline;font-size:var(--op-size-body-l)}
+.pb-trinn li + li{margin-top:var(--op-space-3)}
+.pb-trinn .n{display:inline-flex;align-items:center;justify-content:center;width:1.5rem;height:1.5rem;background:var(--op-ink);color:var(--op-paper);font-weight:var(--op-weight-bold);font-size:var(--op-size-caption)}
+.pb-sitat{font-size:var(--op-size-display-m);font-weight:var(--op-weight-bold);letter-spacing:var(--op-track-heading);line-height:1.3;max-width:40ch}
+.pb-merk{color:var(--op-text-muted)}
+.pb-kurs h3{font-size:var(--op-size-display-m)}
+.pb-kurs ul{list-style:none;padding:0}
+.pb-kurs li{padding-left:1.5rem;position:relative}
+.pb-kurs li::before{content:"";position:absolute;left:0;top:.45em;width:.7rem;height:.7rem;border:1.5px solid var(--op-ink)}
+#sjekk .pb-boks{margin-top:var(--op-space-6)}
+#sjekk .pb-boks h3{font-size:var(--op-size-display-m);margin:0}
+@media (max-width:760px){
+  .site-head .pb-folio .op-label{display:none}
+  .pb-av{grid-template-columns:1fr;align-items:start}
+  .pb-av img{max-width:12rem}
+  .pb-kap-head{grid-template-columns:3rem 1fr}
+  .pb-boks{padding:var(--op-space-5)}
+  .pb-tabell thead{display:none}
+  .pb-tabell,.pb-tabell tbody,.pb-tabell tr,.pb-tabell td{display:block;width:100%}
+  .pb-tabell tr{padding:var(--op-space-4) 0;border-bottom:1px solid var(--op-border)}
+  .pb-tabell tr:first-child{border-top:1px solid var(--op-ink)}
+  .pb-tabell td{border:0;padding:var(--op-space-1) 0}
+  .pb-tabell td[data-label]::before{content:attr(data-label);display:block;font-family:var(--op-font-mono);font-weight:var(--op-weight-medium);font-size:var(--op-size-label);text-transform:uppercase;letter-spacing:var(--op-track-label);color:var(--op-text-muted);margin-top:var(--op-space-2)}
+  .pb-tabell td:first-child::before{display:none}
+  .pb-tabell.skjema td:not(:first-child):not(:nth-child(2)){border-left:0;min-height:2.5rem}
+}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="op-logo" href="https://operators.no" aria-label="Operators">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><mask id="opO-h" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/><ellipse cx="50" cy="50" rx="16.5" ry="28" fill="#000" transform="rotate(-20 50 50)"/></mask><circle cx="50" cy="50" r="47" fill="currentColor" mask="url(#opO-h)"/></svg>PERATORS<i class="op-dot">.</i>
+    </a>
+    <span class="pb-folio"><span class="op-label">Powered by</span><img src="/assets/img/meddic/folio.png" alt="Folio" width="83" height="31"></span>
+  </div>
+</header>
+
+<main>
+
+<!-- TOPP -->
+<section class="pb-hero">
+  <div class="wrap">
+    <p class="op-label">Playbook · Komplekst B2B-salg</p>
+    <h1>MEDDIC i praksis</h1>
+    <div class="op-rule" aria-hidden="true"></div>
+    <p class="lede">Hva rammeverket er, hva elementene betyr, og hvordan dere tar det i bruk i forecast-møter og deal reviews.</p>
+    <a class="btn btn-line" href="#sjekk">Ta MEDDIC-sjekken</a>
+
+    <div class="pb-av">
+      <img src="/assets/img/b2b-salg/espen-portrett.jpg" alt="Espen Sjaavik" width="880" height="1100">
+      <div>
+        <p class="op-label">Av</p>
+        <h2>Espen Sjaavik</h2>
+        <p class="rolle">Medgründer i Alfred</p>
+        <p class="bio muted">Har bygget salgsorganisasjoner i amerikanske SaaS-selskaper og jobbet med MEDDIC i rundt 15 år. Var med på Zscalers vekst fra 300 millioner til 2,5 milliarder dollar i årlig omsetning. Tidligere i Gartner, Bazaarvoice, AppDynamics og Cybereason.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INNHOLD -->
+<section class="section">
+  <div class="wrap">
+    <p class="op-label">Innhold</p>
+    <ol class="pb-innhold">
+      <li><span class="op-label">01</span><a href="#kap1">Hva MEDDIC er, og hva det ikke er</a></li>
+      <li><span class="op-label">02</span><a href="#kap2">De seks elementene</a></li>
+      <li><span class="op-label">03</span><a href="#kap3">Elementene i praksis</a></li>
+      <li><span class="op-label">04</span><a href="#kap4">MEDDIC i forecast-møtet</a></li>
+      <li><span class="op-label">05</span><a href="#kap5">Deal review og kvalifiseringsskjema</a></li>
+      <li><span class="op-label">06</span><a href="#kap6">Slik kommer dere i gang</a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 1 -->
+<section class="section" id="kap1">
+  <div class="wrap">
+    <div class="pb-kap-head"><span class="nr">1</span><h2>Hva MEDDIC er, og hva det ikke er</h2></div>
+    <div class="pb-tekst">
+      <p>MEDDIC er et kvalifiseringsrammeverk og et strategiverktøy for selgere og salgsledere. Det beskriver seks elementer som finnes i enhver kompleks kjøpsbeslutning, enten selgeren kartlegger dem eller ikke. Rammeverket viser hvor sterkt en deal står på hvert element, hvor hullene er, og hva neste skritt bør være.</p>
+      <p>Tenk på det som et kart, ikke en sjekkliste. Vet du ikke hvor på kartet du er, spiller det ingen rolle om du svinger til høyre eller venstre. MEDDIC forteller deg hvor kunden står i sin egen beslutning.</p>
+      <h3>MEDDIC er ikke</h3>
+      <ul>
+        <li><b>En salgsprosess.</b> Prosessen beskriver hva <em>dere</em> gjør. MEDDIC beskriver hva som må være sant hos <em>kunden</em> for at dealen skal bli signert.</li>
+        <li><b>Et spørreskjema.</b> Ingen gode selgere går gjennom bokstavene i rekkefølge i et kundemøte.</li>
+        <li><b>Seks felter i CRM.</b> Å ha MEDDIC-felter i HubSpot eller Salesforce gjør dere ikke til et MEDDIC-selskap.</li>
+        <li><b>Internrapportering.</b> Opplever selgerne rammeverket som noe de fyller ut for ledelsen, har dere ikke fått verdien ut av det.</li>
+      </ul>
+      <h3>Hvor kommer MEDDIC fra?</h3>
+      <p>MEDDIC ble utviklet i PTC på 1990-tallet. Salgssjef John McMahon ba en av sine beste selgere, Dick Dunkel, analysere hundrevis av vunne og tapte dealer for å svare på tre spørsmål: Hvorfor vinner vi? Hvorfor taper vi? Hvorfor tar noen dealer lengre tid enn forecastet? Svaret kunne kokes ned til seks bokstaver. Sammen med Jack Napoli ble metoden rullet ut til hele salgsstyrken, og PTC fikk en lang periode med treffsikre forecaster og sterk vekst.</p>
+      <p>Senere har mange utvidet rammeverket. Den vanligste varianten er <b>MEDDPICC</b>, som legger til <b>Paper Process</b> (veien fra muntlig ja til signert kontrakt) og <b>Competition</b> (hvem og hva dere konkurrerer mot, inkludert «gjøre ingenting»). Prinsippene er de samme. Start med MEDDIC, og legg til elementene når dere har språket på plass.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="section" id="kap2">
+  <div class="wrap">
+    <div class="pb-kap-head"><span class="nr">2</span><h2>De seks elementene</h2></div>
+    <table class="pb-tabell">
+      <thead><tr><th>Element</th><th>Hva det er</th><th>Nøkkelspørsmålet</th><th>Faresignal</th></tr></thead>
+      <tbody>
+        <tr><td>M – Metrics</td><td data-label="Hva det er">Hva nåsituasjonen koster kunden, og hva situasjonen etter endringen er verdt.</td><td data-label="Nøkkelspørsmålet">Står Championen bak tallet, og tror Economic Buyer på det?</td><td data-label="Faresignal">Dere har regnet ut ROI alene, uten kunden.</td></tr>
+        <tr><td>E – Economic Buyer</td><td data-label="Hva det er">Den eller de som til syvende og sist kan si ja eller nei. Kan være en komité.</td><td data-label="Nøkkelspørsmålet">Hvis alle andre sier ja, hvem kan si nei?</td><td data-label="Faresignal">Dere kjenner navnet, men har aldri møtt personen.</td></tr>
+        <tr><td>D – Decision Criteria</td><td data-label="Hva det er">Kriteriene kunden velger løsning etter: tekniske, forretningsmessige og økonomiske.</td><td data-label="Nøkkelspørsmålet">Hvilke kriterier gjelder, og står Economic Buyer bak dem?</td><td data-label="Faresignal">Kriteriene endrer seg underveis.</td></tr>
+        <tr><td>D – Decision Process</td><td data-label="Hva det er">Stegene fram til signert kontrakt, og hvem som eier hvert steg hos kunden.</td><td data-label="Nøkkelspørsmålet">Hvordan gikk det sist dere kjøpte noe lignende?</td><td data-label="Faresignal">Kunden svarer «det er bare en formalitet».</td></tr>
+        <tr><td>I – Identify Pain</td><td data-label="Hva det er">Problemet som er stort nok til at kunden vil gjøre en endring.</td><td data-label="Nøkkelspørsmålet">Hva skjer hvis dere fortsatt har dette problemet om ett år?</td><td data-label="Faresignal">«Painen» beskriver løsningen deres, ikke kundens problem.</td></tr>
+        <tr><td>C – Champion</td><td data-label="Hva det er">En person hos kunden med makt, innflytelse og vilje til å kjempe for dere når dere ikke er i rommet.</td><td data-label="Nøkkelspørsmålet">Hva har personen gjort som viser at hen kjemper for dere?</td><td data-label="Faresignal">«Championen» er hyggelig, men har aldri skaffet dere tilgang til noen.</td></tr>
+      </tbody>
+    </table>
+    <div class="pb-tekst" style="margin-top:var(--op-space-7)">
+      <h3>Pain, people, process</h3>
+      <p>Bokstavene er ikke en rekkefølge. Det er mer nyttig å gruppere dem i tre: først <b>problemet</b> kunden vil løse (Identify Pain og Metrics), så <b>personene</b> som påvirker beslutningen (Economic Buyer og Champion), og til slutt <b>prosessen</b> (Decision Criteria og Decision Process). Pain finds champions: forstår dere hvorfor en endring må skje, finner dere også hvem som kan drive den.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="section" id="kap3">
+  <div class="wrap">
+    <div class="pb-kap-head"><span class="nr">3</span><h2>Elementene i praksis</h2></div>
+    <div class="pb-tekst">
+      <h3>Identify Pain: problemet med kundens ord</h3>
+      <p>Den vanligste feilen er å beskrive løsningen som om den var problemet. «Kunden mangler oversikt» er ikke en pain. Oversikt er løsningen. Spør heller: hva skjer fordi de ikke har oversikt, og hva koster det?</p>
+      <p>Smerte flytter seg oppover i organisasjonen. Den starter ofte teknisk, men Economic Buyer bryr seg først når den er løftet til forretningsnivå:</p>
+    </div>
+    <table class="pb-tabell" style="max-width:52rem">
+      <thead><tr><th>Nivå</th><th>Hvem kjenner den</th><th>Eksempel</th></tr></thead>
+      <tbody>
+        <tr><td>1. Teknisk</td><td data-label="Hvem kjenner den">Systemet eller verktøyet</td><td data-label="Eksempel">Mangler innsikt i tech-stacken</td></tr>
+        <tr><td>2. Bruker</td><td data-label="Hvem kjenner den">Den som jobber i det daglig</td><td data-label="Eksempel">Analytikeren bruker tre timer ekstra hver dag</td></tr>
+        <tr><td>3. Organisasjon</td><td data-label="Hvem kjenner den">Teamet eller avdelingen</td><td data-label="Eksempel">Sikkerhetsteamet stjeler tid fra andre team</td></tr>
+        <tr><td>4. Forretning</td><td data-label="Hvem kjenner den">Economic Buyer, for eksempel CFO</td><td data-label="Eksempel">Risikoen for å havne på forsiden av DN etter et cyberangrep</td></tr>
+      </tbody>
+    </table>
+    <div class="pb-tekst" style="margin-top:var(--op-space-5)">
+      <p>Husk at den største konkurrenten er å ikke gjøre noe. Kunden endrer seg først når <em>pain of same</em> er større enn <em>pain of change</em>. Spol fram ett år, finn datoen problemet må være løst innen, og regn bakover derfra.</p>
+
+      <h3>Metrics: fra minutter til kroner</h3>
+      <p>Metrics er den logiske delen av painen. Både nåsituasjonen og situasjonen etter endringen må tallfestes. Eksempel: 100 utviklere bruker 30 minutter hver dag på en manuell oppgave. De 3 000 minuttene er en brukerpain. Blir en del av tiden til økt utviklingstakt, kan dere regne det hjem til forretningsverdi.</p>
+      <ul>
+        <li>Bygg business caset <b>sammen med Championen</b>, med feilmargin. Selgeren er som regel mer optimistisk enn virkeligheten.</li>
+        <li>Presenter <b>ett tall</b> Championen står bak. Viser dere høy, middels og lav, forkaster kunden de to øverste og krymper det laveste.</li>
+        <li>Kombiner intervjuer med brukerne og et enkelt regneark med før og etter.</li>
+        <li>Test caset mot Economic Buyer underveis: møter det kravene deres?</li>
+      </ul>
+
+      <h3>Economic Buyer: navn er ikke tilgang</h3>
+      <p>Uten tilgang selger dere ikke til Economic Buyer. Dere selger til Championens tolkning av Economic Buyers kriterier. Ta møtet tidlig, men etter at dere vet hva problemet er, og still tre spørsmål:</p>
+      <ol>
+        <li>Er du enig i at dette er et problem?</li>
+        <li>Er det en prioritet å løse det?</li>
+        <li>Er du villig til å sponse en evaluering av løsningen vår mot disse kriteriene?</li>
+      </ol>
+      <p>Det beste er et raskt ja, det nest beste et raskt nei. Still også testen i alle aktive dealer: <em>«Hvis alle andre sier ja, hvem kan si nei?»</em> Det er ofte flere som kan si nei, men bare én som kan si ja.</p>
+
+      <h3>Champion: makt, innflytelse og vilje</h3>
+      <p>En Champion selger for dere når dere ikke er der, og har en personlig interesse i at endringen skjer. Noen er <b>pådrivere</b> som vil løse problemet fordi det gir noe i karrieren, og snakker om oppside. Andre er <b>risikominimerere</b> som vil beskytte seg selv, og snakker om nedside. Test Championen: har hen gitt dere informasjon dere ikke ville fått ellers, og skaffet dere tilgang til personer med makt? En coach som liker dere er ikke det samme som en Champion.</p>
+
+      <h3>Decision Criteria: påvirk kriteriene tidlig</h3>
+      <p>De fleste kunder har ikke som jobb å kjøpe, og vet ofte ikke selv hvilke kriterier de har. Det gir dere en mulighet:</p>
+      <ol>
+        <li>Kartlegg kundens tekniske, forretningsmessige og økonomiske kriterier.</li>
+        <li>Marker de absolutte. Kan dere ikke oppfylle dem, bør dere ikke være i dealen.</li>
+        <li>Foreslå kriterier der dere er unike, og som har verdi for kunder som dem.</li>
+        <li>Tallfest verdien av disse kriteriene i business caset.</li>
+        <li>Få Economic Buyer til å stå bak kriteriene før evalueringen starter.</li>
+      </ol>
+      <p>Endrer kriteriene seg underveis, er det et sterkt tegn på at en konkurrent eller en konkurrerende Champion er aktiv. Sier kunden at pris er viktigst, finn ut hva som ligger bak: likviditet (løses med betalingsbetingelser) eller verdi (flytt samtalen til avkastningen Championen allerede står bak).</p>
+
+      <h3>Decision Process: spør hvordan det gikk sist</h3>
+      <p>«Hvordan kjøper dere?» gir sjelden ærlige svar. Spør heller: <em>«Hvordan fungerte det sist dere kjøpte noe av lignende kompleksitet?»</em> Kartlegg stegene som gjenstår, tidslinjen, hvem som eier hvert steg, og om Championen kan nå og påvirke dem. Ved slutten av prosessen finner dere Economic Buyer.</p>
+      <p>Ikke undervurder <b>Paper Process</b>: sikkerhetskrav, personvern, databehandleravtale, innkjøp og juridisk. Vet dere hvor lang tid det tar fra muntlig ja til signert kontrakt? Må kontrakten gjennom et konsern? Time kills deals.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="section" id="kap4">
+  <div class="wrap">
+    <div class="pb-kap-head"><span class="nr">4</span><h2>MEDDIC i forecast-møtet</h2></div>
+    <div class="pb-tekst">
+      <p>Det er selgerens nærmeste leder som avgjør om MEDDIC faktisk blir brukt. Det hjelper lite med kurs og CRM-felter hvis ingen holder standarden hver uke. Forecast-møtet er stedet der språket blir vane.</p>
+      <h3>Coach prestasjonen, ikke resultatet</h3>
+      <p>Du kan ikke coache utfallet. Du kan coache hvordan dealen skal gjøre framdrift denne uka. Tenk som expected goals (xG) i fotball: en selger som ikke har signert på lenge, kan ha gjort alt riktig. Den største ledertabben er å stirre på resultattavla.</p>
+      <h3>Første svar er ikke nok</h3>
+    </div>
+    <table class="pb-tabell">
+      <thead><tr><th>Selgeren sier</th><th>Leder som godtar</th><th>Leder som bruker MEDDIC</th></tr></thead>
+      <tbody>
+        <tr><td>«Painen er at de mangler oversikt.»</td><td data-label="Leder som godtar">«Ok.»</td><td data-label="Leder som bruker MEDDIC">«Det er løsningen vår. Hvilket problem vil de løse med oversikten? Hva skjer om de ikke løser det?»</td></tr>
+        <tr><td>«Championen er VP of Operations.»</td><td data-label="Leder som godtar">«Ok.»</td><td data-label="Leder som bruker MEDDIC">«Hvordan vet du det? Hva har personen gjort som viser makt og vilje til å kjempe for oss?»</td></tr>
+        <tr><td>«Economic Buyer heter Grete.»</td><td data-label="Leder som godtar">«Ok.»</td><td data-label="Leder som bruker MEDDIC">«Har du møtt henne? Hvis Grete sier ja, kan noen si nei? Hva er planen for å møte henne?»</td></tr>
+        <tr><td>«De signerer innen månedsslutt.»</td><td data-label="Leder som godtar">«Flott.»</td><td data-label="Leder som bruker MEDDIC">«Hvilke steg gjenstår i paper process, og hvem eier dem? Hvordan gikk det sist de kjøpte noe lignende?»</td></tr>
+      </tbody>
+    </table>
+    <div class="pb-tekst" style="margin-top:var(--op-space-5)">
+      <p>Hvert spørsmål skal ende i en konkret handling som reduserer risikoen i dealen. Da blir MEDDIC et coaching- og navigasjonsverktøy, ikke et forhør.</p>
+    </div>
+    <div class="pb-boks">
+      <p class="op-label">Sjekkliste for forecast-møtet</p>
+      <ul class="rows">
+        <li><b>Ukentlig.</b> Går det lenger mellom, mister dere grepet.</li>
+        <li>Selgerne beskriver dealene element for element med MEDDIC-begrepene.</li>
+        <li>Skriv hvem hos kunden som er <b>kilden</b> til hver opplysning. Spør alltid: «ifølge hvem?»</li>
+        <li>Vit hvor stor andel av forecastet (i kroner) der dere faktisk har møtt Economic Buyer.</li>
+        <li>Knytt forecast-kategoriene til MEDDIC. Et godt utgangspunkt: en deal kan ikke ligge i <em>commit</em> uten bekreftet pain, tallfestede metrics, møtt Economic Buyer og kjent paper process.</li>
+        <li>Lederen bør være involvert i minst 30–40 % av forecastet, målt i kroner.</li>
+        <li>Dealer som trenger mer tid enn møtet gir, får en egen deal review.</li>
+      </ul>
+    </div>
+    <div class="pb-tekst" style="margin-top:var(--op-space-7)">
+      <h3>Ingen deal er «grønn»</h3>
+      <p>Mange scorer MEDDIC med rød-gul-grønn eller 0–10. Risikoen ved å kalle et element grønt er at dere slutter å følge med på det. MEDDIC er et øyeblikksbilde, og situasjonen endrer seg. Re-valider ofte. Si åpent internt hvor hullene er. Det handler om dealen, ikke om selgeren, og ingen tjener på at dealer «selges internt».</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="section" id="kap5">
+  <div class="wrap">
+    <div class="pb-kap-head"><span class="nr">5</span><h2>Deal review og kvalifiseringsskjema</h2></div>
+    <div class="pb-tekst">
+      <h3>Kvalifiseringsskjema for én deal</h3>
+      <p>Bruk skjemaet før forecast-møtet og som grunnlag for deal reviews. Den viktigste kolonnen er den siste: hva vet dere <em>ikke</em>?</p>
+    </div>
+    <table class="pb-tabell skjema">
+      <thead><tr><th>Element</th><th>Spørsmålet</th><th>Hva vet vi? (kilde)</th><th>Hva er gapet?</th><th>Neste handling</th></tr></thead>
+      <tbody>
+        <tr><td>Identify Pain</td><td data-label="Spørsmålet">Hvilket problem vil kunden løse, med kundens ord?</td><td data-label="Hva vet vi? (kilde)"></td><td data-label="Hva er gapet?"></td><td data-label="Neste handling"></td></tr>
+        <tr><td>Metrics</td><td data-label="Spørsmålet">Hva koster problemet, og står Championen bak tallet?</td><td data-label="Hva vet vi? (kilde)"></td><td data-label="Hva er gapet?"></td><td data-label="Neste handling"></td></tr>
+        <tr><td>Economic Buyer</td><td data-label="Spørsmålet">Hvem kan si nei, og har vi møtt personen selv?</td><td data-label="Hva vet vi? (kilde)"></td><td data-label="Hva er gapet?"></td><td data-label="Neste handling"></td></tr>
+        <tr><td>Decision Criteria</td><td data-label="Spørsmålet">Hvilke kriterier gjelder, og står EB bak dem?</td><td data-label="Hva vet vi? (kilde)"></td><td data-label="Hva er gapet?"></td><td data-label="Neste handling"></td></tr>
+        <tr><td>Decision Process</td><td data-label="Spørsmålet">Hvilke steg gjenstår, og hvem eier dem?</td><td data-label="Hva vet vi? (kilde)"></td><td data-label="Hva er gapet?"></td><td data-label="Neste handling"></td></tr>
+        <tr><td>Champion</td><td data-label="Spørsmålet">Hva viser at personen har makt og kjemper for oss?</td><td data-label="Hva vet vi? (kilde)"></td><td data-label="Hva er gapet?"></td><td data-label="Neste handling"></td></tr>
+      </tbody>
+    </table>
+    <div class="pb-boks">
+      <p class="op-label">Slik kjører dere en deal review</p>
+      <p class="body-l"><b>Hvem:</b> alle som jobber med dealen, pluss andre som kan bidra. Ta gjerne med andre selgere, de kjenner ofte igjen problemene fra egne dealer.</p>
+      <ol class="pb-trinn">
+        <li><span class="n">1</span><span>Legg alt dere vet om dealen på bordet. Hva vet dere, og hva vet dere ikke?</span></li>
+        <li><span class="n">2</span><span>List opp handlinger som kan gi framdrift på hvert MEDDIC-element. Det finnes alltid mange.</span></li>
+        <li><span class="n">3</span><span>Lederen hjelper selgeren å velge de tre viktigste.</span></li>
+        <li><span class="n">4</span><span>Fordel dem: lederen tar én, selgeren én og solution engineer én.</span></li>
+        <li><span class="n">5</span><span>Ny deal review om tre dager.</span></li>
+      </ol>
+      <p class="pb-merk">Lederen må ta en handling selv. Får bare selgeren oppgaver, mister selgeren lysten til å ha deal reviews.</p>
+    </div>
+    <div class="pb-boks">
+      <p class="op-label">MEDDIC sammen med 3 Whys</p>
+      <p class="body-l">For å vurdere om en deal blir signert i tide, kombiner MEDDIC med tre spørsmål dere bygger sammen med Championen, slik at hen kan selge på deres vegne:</p>
+      <ul class="rows">
+        <li><b>Why anything?</b> Hvorfor kan ikke kunden fortsette som i dag?</li>
+        <li><b>Why us?</b> Hvorfor akkurat denne leverandøren?</li>
+        <li><b>Why now?</b> Hva koster det å bli i situasjonen ett år til?</li>
+      </ul>
+      <p class="pb-merk">Et tallfestet «why now» er sterkere enn en kalenderhendelse som er borte når datoen passerer.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section class="section" id="kap6">
+  <div class="wrap">
+    <div class="pb-kap-head"><span class="nr">6</span><h2>Slik kommer dere i gang</h2></div>
+    <div class="pb-tekst">
+      <p>Dere trenger ikke innføre alt på én gang. MEDDIC modnes typisk i tre nivåer: <b>språket</b> (alle bruker samme definisjoner), <b>daglig bruk</b> (rammeverket styrer arbeidet med dealer) og <b>institusjonalisering</b> (hele selskapet bruker det til å forstå hvorfor dere vinner og taper). De fleste stopper på første nivå. Her er en enkel plan for å komme videre:</p>
+    </div>
+    <table class="pb-tabell" style="max-width:52rem">
+      <thead><tr><th>Når</th><th>Hva dere gjør</th></tr></thead>
+      <tbody>
+        <tr><td>Uke 1</td><td data-label="Hva dere gjør"><b>Bli enige om definisjonene.</b> Skriv ned hva dere mener med hvert element, først og fremst hva en Champion er hos dere, og hvordan dere vet at noen er det.</td></tr>
+        <tr><td>Uke 1–2</td><td data-label="Hva dere gjør"><b>Skriv problemet for ti dealer.</b> Ta de ti viktigste dealene og skriv kundens problem i én setning, med kundens ord. Beskriver svaret løsningen deres, har dere ikke funnet problemet ennå.</td></tr>
+        <tr><td>Uke 2–3</td><td data-label="Hva dere gjør"><b>Gjør som PTC.</b> Gå gjennom vunne, tapte og forsinkede dealer. Marker hvilket element som var svakest i hver. Mønsteret viser hvor dere må bli bedre.</td></tr>
+        <tr><td>Uke 3</td><td data-label="Hva dere gjør"><b>Sett rytmen.</b> Innfør ukentlig forecast-møte der dere bruker begrepene og oppfølgingsspørsmålene fra kapittel 4.</td></tr>
+        <tr><td>Uke 4 og videre</td><td data-label="Hva dere gjør"><b>Start deal reviews</b> på de største og mest usikre dealene. Bruk kvalifiseringsskjemaet, og evaluer etter et kvartal hvor forecasten traff og hvor den bommet.</td></tr>
+      </tbody>
+    </table>
+    <div class="pb-tekst" style="margin-top:var(--op-space-7)">
+      <h3>Når lønner MEDDIC seg?</h3>
+      <p>MEDDIC gir mest verdi når flere personer hos kunden er involvert i beslutningen, og når dealene er store nok til at et tap eller en forsinkelse merkes. På mindre dealer kan full bruk føles tungt, men det koster ingenting å stille de kritiske spørsmålene. MEDDIC finnes i alle dealer. Sammenlignet med BANT (for enkelt for komplekse salg) og SPICED (sterk struktur for discovery, men for lettbeint og uten egen plass for Champion og Economic Buyer) er MEDDIC laget for å forstå og påvirke selve beslutningen. MEDDIC med 3 Whys er den beste måten å kvalifisere en deal.</p>
+    </div>
+
+    <div id="sjekk">
+      <div class="pb-boks strek">
+        <p class="op-label">Selvtest: bruker vi MEDDIC, eller fyller vi bare ut felter?</p>
+        <h3>Ta MEDDIC-sjekken</h3>
+        <p class="body-l">Svar på elleve spørsmål om de siste dealene deres. Dere får de tre stedene dere bør starte, med én ting å gjøre denne uka og en episode der Espen forklarer hvorfor.</p>
+        <div data-meddic-sjekk></div>
+        <noscript><p class="body-l"><a class="op-link" href="/b2b-salg/sjekk/">Ta sjekken på en egen side</a>.</p></noscript>
+      </div>
+    </div>
+
+    <div class="pb-boks strek">
+      <p class="pb-sitat">Det viktigste skiftet er fra compliance til commitment: fra å fylle ut MEDDIC fordi ledelsen ber om det, til å bruke det fordi det hjelper deg å vinne.</p>
+    </div>
+
+    <div class="pb-boks strek pb-kurs">
+      <p class="op-label">Masterclass · 13.–14. januar 2027 · Oslo</p>
+      <h3>Vil dere jobbe med dette på egne dealer?</h3>
+      <p class="body-l muted">Operators arrangerer to kursdager med Espen Sjaavik. Dere bygger første versjon av et salgssystem der salget ikke står og faller på én person, og jobber med egne dealer og egne tall. Kurset er for selskaper med komplekse eller store salg. 16 plasser, søknadsfrist 18. desember 2026.</p>
+      <p class="body-l muted">Kurset passer hvis dere:</p>
+      <ul class="body-l">
+        <li>ikke helt vet hvorfor dere vinner, eller hvorfor dere taper</li>
+        <li>mangler et felles språk for dealer, prosesser og kunder</li>
+        <li>ikke føler at dere har kontroll på forecast og pipeline</li>
+      </ul>
+      <p><a class="btn btn-primary" href="/b2b-salg/">Les mer og søk om plass</a></p>
+    </div>
+
+    <p class="muted" style="margin-top:var(--op-space-6)">Hør Espen i Operators-podcasten, og få operativ innsikt fra nordiske vekstselskaper hver uke, på <a class="op-link" href="https://operators.no">operators.no</a>.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <a class="op-logo" href="https://operators.no" aria-label="Operators">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><mask id="opO-f" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/><ellipse cx="50" cy="50" rx="16.5" ry="28" fill="#000" transform="rotate(-20 50 50)"/></mask><circle cx="50" cy="50" r="47" fill="currentColor" mask="url(#opO-f)"/></svg>PERATORS<i class="op-dot">.</i>
+    </a>
+    <span class="foot-links"><span class="pb-folio"><span class="op-label">Powered by</span><img src="/assets/img/meddic/folio.png" alt="Folio" width="83" height="31"></span><a class="op-label" href="/personvern/">Personvern</a><a class="op-label" href="https://operators.no">operators.no</a></span>
+  </div>
+</footer>
+</body>
+</html>
